@@ -4,7 +4,7 @@ import { testCommonEntityFields, startIndex, endIndex } from './common';
 
 describe('DateTimeV2 prebuilt', () => {
     describe('date disambiguation', () => {
-        // this shouldn't matter because we don't actually parse it
+        // updating this shouldn't matter because we don't actually parse it
         const inputDateString = '9/22';
         const inputDate = new Date('9/22 12:55:00');
         const earlierRelativeDate = new Date('9/21/2015');

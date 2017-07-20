@@ -3,22 +3,9 @@ import { datetimeV2, datetimeV2Type } from './entityTypes';
 import { ResolvablePrebuiltEntity, MultipleValueResolution } from './prebuiltEntities';
 import * as moment from 'moment';
 
-/*
-
-export const datetimeV2 = {
-    datetimeV2Date: `${datetimeV2Prefix}.date`,
-    datetimeV2DateRange: `${datetimeV2Prefix}.daterange`,
-    datetimeV2Time: `${datetimeV2Prefix}.time`,
-    datetimeV2DateTimeRange: `${datetimeV2Prefix}.datetimerange`,
-    datetimeV2Duration: `${datetimeV2Prefix}.duration`,
-    datetimeV2Set: `${datetimeV2Prefix}.set`
-}
-*/
-
 const momentDateTimeFormatString = "YYYY-MM-DD HH:mm:ss";
 const momentDateFormatString = "YYYY-MM-DD";
 const momentTimeFormatString = "HH:mm:ss";
-
 
 export interface DateTimeV2Resolution {
     // timex is likely not needed for most users, so keep it optional
