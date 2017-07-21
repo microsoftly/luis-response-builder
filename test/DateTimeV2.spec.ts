@@ -1,4 +1,3 @@
-console.log(__dirname, __filename);
 import { expect } from 'chai';
 import { DateTimeV2, DateTimeV2ResolutionWithValue } from '../src/DateTimeV2';
 import { testCommonEntityFields, startIndex, endIndex } from './common';
