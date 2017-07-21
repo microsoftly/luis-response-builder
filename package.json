@@ -4,7 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "test": "node_modules/mocha/bin/_mocha --require node_modules/ts-node/register tests/*"
+    "build": "tsc",
+    "clean": "rm -rf ./dist",
+    "cleanBuild": "npm run clean && npm run build",
+    "localTest": "node_modules/mocha/bin/_mocha --require node_modules/ts-node/register test/*",
+    "test": "npm run cleanBuild && node_modules/mocha/bin/_mocha dist/test/**/*.js"
   },
   "devDependencies": {
     "@types/chai": "^4.0.1",
