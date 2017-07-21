@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
+    "build": "node_modules/typescript/bin/tsc",
     "clean": "rm -rf ./dist",
     "cleanBuild": "npm run clean && npm run build",
     "localTest": "node_modules/mocha/bin/_mocha --require node_modules/ts-node/register test/*",
