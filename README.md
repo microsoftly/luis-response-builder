@@ -1,1 +1,1 @@
-[![CircleCI](https://circleci.com/gh/microsoftly/luis-entity-builder/tree/master.svg?style=?style=shield&circle-token)](https://circleci.com/gh/microsoftly/luis-entity-builder/tree/master)
+[![CircleCI](https://circleci.com/gh/microsoftly/luis-entity-builder/tree/master.svg?style=shield)](https://circleci.com/gh/microsoftly/luis-entity-builder/tree/master)
