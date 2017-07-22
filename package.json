@@ -1,5 +1,5 @@
 {
-  "name": "luis-prebuilt",
+  "name": "luis-entity-builder",
   "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",

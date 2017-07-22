@@ -1,4 +1,4 @@
-import { moneyType } from './entityTypes';
+import { moneyType } from './prebuiltEntityTypes';
 import { ResolvablePrebuiltEntity, ValueResolution } from './prebuiltEntities';
 
 interface MoneyValueResolution extends ValueResolution {

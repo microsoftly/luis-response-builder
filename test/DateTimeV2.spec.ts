@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { DateTimeV2, DateTimeV2ResolutionWithValue } from '../src/DateTimeV2';
+import { DateTimeV2, DateTimeV2ResolutionWithValue } from '../src/prebuilt/DateTimeV2';
 import { testCommonEntityFields, startIndex, endIndex } from './common';
 
 describe('DateTimeV2 prebuilt', () => {

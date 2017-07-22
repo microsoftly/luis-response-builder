@@ -1,14 +1,6 @@
-export interface PrebuiltEntity {
-    readonly type: string;
-    readonly entity: string;
-} 
+import { Entity } from './../Entity';
 
-export interface PrebuiltEntityWithStartAndEnd extends PrebuiltEntity {
-    readonly startIndex: number;
-    readonly endIndex: number;
-
-}
-export class ResolvablePrebuiltEntity implements PrebuiltEntity {
+export class ResolvablePrebuiltEntity implements Entity {
     public readonly type: string;
     public readonly entity: string;
     public readonly startIndex: number;

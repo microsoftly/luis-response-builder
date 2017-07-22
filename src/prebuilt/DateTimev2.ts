@@ -1,5 +1,5 @@
 import { currentId } from 'async_hooks';
-import { datetimeV2, datetimeV2Type } from './entityTypes';
+import { datetimeV2, datetimeV2Type } from './prebuiltEntityTypes';
 import { ResolvablePrebuiltEntity, MultipleValueResolution } from './prebuiltEntities';
 import * as moment from 'moment';
 
