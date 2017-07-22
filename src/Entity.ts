@@ -1,5 +1,4 @@
 import { startIndex } from './../test/common';
-import { CustomEntity } from './../dist/src/Entity.d';
 import { DEFAULT_SCORE, DEFAULT_START_INDEX, DEFAULT_END_INDEX } from './constants';
 
 export interface Entity {
