@@ -81,8 +81,17 @@
     "type": "git",
     "url": "git+ssh://git@github.com/microsoftly/luis-prebuilt.git"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [
-    "luis.ai"
+    "luis.ai",
+    "test",
+    "tdd",
+    "bdd",
+    "integration testing",
+    "botbuilder",
+    "mbf"
   ],
   "author": "matt schwartz",
   "bugs": {
