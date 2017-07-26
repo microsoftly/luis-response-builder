@@ -6,7 +6,7 @@ interface MoneyValueResolution extends ValueResolution {
 }
 
 class Money extends ResolvablePrebuiltEntity {
-    resolution: MoneyValueResolution;
+    public resolution: MoneyValueResolution;
     private Money() {}
 
     public static CreateMoneyEntity(entity: string, startIndex: number, endIndex: number, unit: string, value: string | number): Money{
