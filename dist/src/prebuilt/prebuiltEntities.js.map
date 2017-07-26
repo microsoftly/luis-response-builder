@@ -1,1 +1,0 @@
-{"version":3,"file":"prebuiltEntities.js","sourceRoot":"","sources":["../../../src/prebuilt/prebuiltEntities.ts"],"names":[],"mappings":";;AAEA;IAOI,YAAmB,IAAY,EAAE,MAAc,EAAE,UAAkB,EAAE,QAAgB;QACjF,IAAI,CAAC,IAAI,GAAG,IAAI,CAAC;QACjB,IAAI,CAAC,MAAM,GAAG,MAAM,CAAC;QACrB,IAAI,CAAC,UAAU,GAAG,UAAU,CAAC;QAC7B,IAAI,CAAC,QAAQ,GAAG,QAAQ,CAAC;IAC7B,CAAC;CACJ;AAbD,4DAaC"}
