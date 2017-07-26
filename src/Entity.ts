@@ -1,5 +1,4 @@
 import { startIndex } from './../test/common';
-import { CustomEntity } from './../dist/src/Entity.d';
 import { DEFAULT_SCORE, DEFAULT_START_INDEX, DEFAULT_END_INDEX } from './constants';
 
 export interface Entity {
@@ -17,6 +16,7 @@ export interface EntityWithScore extends Entity {
 }
 
 export interface CustomEntity extends EntityWithStartAndEnd, EntityWithScore { }
+export interface PrebuiltEntity extends Entity {};
 
 export function createCustomEntity(entity: string, type: string, score = DEFAULT_SCORE, startIndex = DEFAULT_START_INDEX, endIndex = DEFAULT_END_INDEX ): CustomEntity {
     return {

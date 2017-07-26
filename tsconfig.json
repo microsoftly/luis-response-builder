@@ -14,6 +14,7 @@
     },
     "files": [
         "./src/index.ts",
-        "./test/DateTimeV2.spec.ts"
+        "./test/prebuilt/DateTimeV2.spec.ts",
+        "./test/Entity.spec.ts"
     ]
 }

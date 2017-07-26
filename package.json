@@ -7,8 +7,8 @@
     "build": "node_modules/typescript/bin/tsc",
     "clean": "rm -rf ./dist",
     "cleanBuild": "npm run clean && npm run build",
-    "localTest": "node_modules/mocha/bin/_mocha --require node_modules/ts-node/register test/*",
-    "test": "npm run cleanBuild && node_modules/mocha/bin/_mocha dist/test/**/*.js"
+    "localTest": "node_modules/mocha/bin/_mocha --require node_modules/ts-node/register test/ --recursive",
+    "test": "npm run cleanBuild && node_modules/mocha/bin/_mocha dist/test --recursive"
   },
   "devDependencies": {
     "@types/chai": "^4.0.1",

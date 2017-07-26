@@ -1,6 +1,6 @@
-import { Entity } from './../Entity';
+import { PrebuiltEntity } from './../Entity';
 
-export class ResolvablePrebuiltEntity implements Entity {
+export class ResolvablePrebuiltEntity implements PrebuiltEntity {
     public readonly type: string;
     public readonly entity: string;
     public readonly startIndex: number;
