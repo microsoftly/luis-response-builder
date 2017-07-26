@@ -1,10 +1,10 @@
 {
   "name": "luis-response-builder",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "main": "dist/src/index.js",
   "license": "MIT",
   "scripts": {
-    "prepublishOnly": "npm run cleanBuild && node_modules/mocha/bin/_mocha dist/test --recursive",
+    "prepublishOnlyZZ": "npm run cleanBuild && node_modules/mocha/bin/_mocha dist/test --recursive",
     "build": "node_modules/typescript/bin/tsc",
     "clean": "rm -rf ./dist",
     "cleanBuild": "npm run clean && npm run build",
