@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "prepublish": "npm run cleanBuild && node_modules/mocha/bin/_mocha dist/test --recursive",
     "build": "node_modules/typescript/bin/tsc",
     "clean": "rm -rf ./dist",
     "cleanBuild": "npm run clean && npm run build",
