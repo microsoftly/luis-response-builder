@@ -12,7 +12,7 @@ export const urlType: string = 'url';
 export const geographyType: string = 'builtin.geography';
 export const encyclopediaType: string = 'builtin.encyclopedia';
 export const emailType: string = 'builtin.email';
-export const phoneNumberType: string = 'builtin.phoneNumber' // not sure about this one. Camelcasing may be wrong
+export const phoneNumberType: string = 'builtin.phoneNumber'; // not sure about this one. Camelcasing may be wrong
 
 export const datetimeV2 = {
     datetimeV2DateType: 'date',
@@ -22,4 +22,4 @@ export const datetimeV2 = {
     datetimeV2DateTimeRangeType: 'datetimerange',
     datetimeV2DurationType: 'duration',
     datetimeV2SetType: 'set'
-}
+};

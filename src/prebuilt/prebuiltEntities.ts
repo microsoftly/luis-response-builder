@@ -1,11 +1,11 @@
-import { PrebuiltEntity } from './../Entity';
+import { IPrebuiltEntity } from './../Entity';
 
-export class ResolvablePrebuiltEntity implements PrebuiltEntity {
+export class ResolvablePrebuiltEntity implements IPrebuiltEntity {
     public readonly type: string;
     public readonly entity: string;
     public readonly startIndex: number;
     public readonly endIndex: number;
-    public resolution: ValueResolution | MultipleValueResolution;
+    public resolution: IValueResolution | IMultipleValueResolution;
 
     public constructor(type: string, entity: string, startIndex: number, endIndex: number) {
         this.type = type;
@@ -15,10 +15,10 @@ export class ResolvablePrebuiltEntity implements PrebuiltEntity {
     }
 }
 
-export interface ValueResolution {
-    value: string | number
+export interface IValueResolution {
+    value: string | number;
 }
 
-export interface MultipleValueResolution {
-    values: any[]
+export interface IMultipleValueResolution {
+    values: {}[];
 }

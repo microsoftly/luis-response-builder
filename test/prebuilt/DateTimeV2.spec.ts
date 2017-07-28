@@ -1,6 +1,6 @@
 import { expect } from 'chai';
-import { DateTimeV2, DateTimeV2ResolutionWithValue } from '../../src/prebuilt/DateTimeV2';
-import { testCommonEntityFields, startIndex, endIndex } from '../common';
+import { DateTimeV2, IDateTimeV2ResolutionWithValue } from '../../src/prebuilt/DateTimeV2';
+import { endIndex, startIndex, testCommonEntityFields } from '../common';
 
 describe('DateTimeV2 prebuilt', () => {
     describe('date disambiguation', () => {
@@ -15,14 +15,14 @@ describe('DateTimeV2 prebuilt', () => {
             testCommonEntityFields(entity, inputDateString, expectedType);
 
             expect(entity.resolution).not.to.be.null;
-            
+
             const values = entity.resolution.values;
 
-            expect(values).to.be.an('array')
+            expect(values).to.be.an('array');
             expect(values.length).to.be.equal(2);
             values.forEach(val => expect(val.type).to.be.equal(expectedType));
 
-            return values.map(value => (value as DateTimeV2ResolutionWithValue).value);
+            return values.map(value => (value as IDateTimeV2ResolutionWithValue).value);
         }
 
         function ensureResolutionExists(entity) {
@@ -30,7 +30,7 @@ describe('DateTimeV2 prebuilt', () => {
         }
 
         function ensureResolutionValueIsArrayOfSize2(entity) {
-            const values = entity.resolution.values; 
+            const values = entity.resolution.values;
             expect(values).to.be.an('array');
             expect(values.length).to.be.equal(2);
         }
@@ -47,13 +47,13 @@ describe('DateTimeV2 prebuilt', () => {
         }
 
         function convertEntityResolutionToDateStringsInPlace(entity) {
-            const values = entity.resolution.values; 
-            return values.map(value => (value as DateTimeV2ResolutionWithValue).value);
+            const values = entity.resolution.values;
+            return values.map(value => (value as IDateTimeV2ResolutionWithValue).value);
         }
 
         function selectCreateDisambiguatedDateEntityFunction(entityType) {
             if(entityType === 'builtin.datetimeV2.date') {
-                return DateTimeV2.createDateTimeV2_Date_EntityWithAmbiguousDate 
+                return DateTimeV2.createDateTimeV2_Date_EntityWithAmbiguousDate;
             } else {
                 return DateTimeV2.createDateTimeV2_DateTime_EntityWithAmbiguousDate;
             }
@@ -62,7 +62,7 @@ describe('DateTimeV2 prebuilt', () => {
         function testDisambiguatedDateEntity(entity, inputDateString, entityType, expectedEarlierDate, expectedLaterDate) {
             testCommonEntityFields(entity, inputDateString, entityType);
             testDisambiguatedDateValueResolution(entity, entityType);
-            
+
             const [earlierResolvedDate, laterResolvedDate] = convertEntityResolutionToDateStringsInPlace(entity);
 
             expect(earlierResolvedDate).to.be.equal(expectedEarlierDate);
@@ -72,10 +72,10 @@ describe('DateTimeV2 prebuilt', () => {
         function testDateDisambiguationByEntityType(entityType, earlierDateTimeResolution, middleDateTimeResolution, laterDateTimeResolution) {
             const createDisambiguatedDateEntityFn = selectCreateDisambiguatedDateEntityFunction(entityType);
 
-            const entityWith_Earlier_RelativeDate 
-                = createDisambiguatedDateEntityFn(inputDateString, startIndex, endIndex, inputDate, earlierRelativeDate); 
-            const entityWith_Later_RelativeDate 
-                = createDisambiguatedDateEntityFn(inputDateString, startIndex, endIndex, inputDate, laterRelativeDate); 
+            const entityWith_Earlier_RelativeDate
+                = createDisambiguatedDateEntityFn(inputDateString, startIndex, endIndex, inputDate, earlierRelativeDate);
+            const entityWith_Later_RelativeDate
+                = createDisambiguatedDateEntityFn(inputDateString, startIndex, endIndex, inputDate, laterRelativeDate);
 
             testDisambiguatedDateEntity(entityWith_Later_RelativeDate, inputDateString, entityType, earlierDateTimeResolution, middleDateTimeResolution);
             testDisambiguatedDateEntity(entityWith_Earlier_RelativeDate, inputDateString, entityType, middleDateTimeResolution, laterDateTimeResolution);
@@ -86,7 +86,7 @@ describe('DateTimeV2 prebuilt', () => {
             const earlierExpectedDate = '2014-09-22';
             const middleExpectedDate = '2015-09-22';
             const laterExpectedDate = '2016-09-22';
-            
+
             testDateDisambiguationByEntityType(expectedEntityType, earlierExpectedDate, middleExpectedDate, laterExpectedDate);
         });
 
@@ -95,8 +95,8 @@ describe('DateTimeV2 prebuilt', () => {
             const earlierExpectedDate = '2014-09-22 12:55:00';
             const middleExpectedDate = '2015-09-22 12:55:00';
             const laterExpectedDate = '2016-09-22 12:55:00';
-            
+
             testDateDisambiguationByEntityType(expectedEntityType, earlierExpectedDate, middleExpectedDate, laterExpectedDate);
-        })
+        });
     });
 });

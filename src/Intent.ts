@@ -1,4 +1,4 @@
 export interface Intent {
-    score: number,
-    intent: string
+    score: number;
+    intent: string;
 }

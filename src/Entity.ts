@@ -1,24 +1,29 @@
-import { startIndex } from './../test/common';
-import { DEFAULT_SCORE, DEFAULT_START_INDEX, DEFAULT_END_INDEX } from './constants';
+import { DEFAULT_END_INDEX, DEFAULT_SCORE, DEFAULT_START_INDEX } from './constants';
 
-export interface Entity {
+export interface IEntity {
     readonly type: string;
     readonly entity: string;
-} 
+}
 
-export interface EntityWithStartAndEnd extends Entity {
+export interface IEntityWithStartAndEnd extends IEntity {
     readonly startIndex: number;
     readonly endIndex: number;
 }
 
-export interface EntityWithScore extends Entity {
-    readonly score: number
+export interface IEntityWithScore extends IEntity {
+    readonly score: number;
 }
 
-export interface CustomEntity extends EntityWithStartAndEnd, EntityWithScore { }
-export interface PrebuiltEntity extends Entity {};
+export interface ICustomEntity extends IEntityWithStartAndEnd, IEntityWithScore { }
+export interface IPrebuiltEntity extends IEntity {}
 
-export function createCustomEntity(entity: string, type: string, score = DEFAULT_SCORE, startIndex = DEFAULT_START_INDEX, endIndex = DEFAULT_END_INDEX ): CustomEntity {
+export function createCustomEntity(
+    entity: string,
+    type: string,
+    score: number = DEFAULT_SCORE,
+    startIndex: number = DEFAULT_START_INDEX,
+    endIndex: number = DEFAULT_END_INDEX
+): ICustomEntity {
     return {
         entity,
         type,

@@ -15,6 +15,7 @@
         "./src/index.ts",
         "./src/prebuilt/index.ts",
         "./test/prebuilt/DateTimeV2.spec.ts",
-        "./test/Entity.spec.ts"
+        "./test/Entity.spec.ts",
+        "./test/LuisResponseBuilder.spec.ts"
     ]
 }
